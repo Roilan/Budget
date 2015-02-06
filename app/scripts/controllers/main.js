@@ -27,7 +27,13 @@ angular.module('budgetApp')
   		});
   	};
 
+  	$scope.clear = function() {
+  		$scope.graphData.labels = [];
+  		$scope.graphData.datasets[0].data = [];
+  	};
+
   	$scope.init = function() {
+  		$scope.clear();
   		$scope.addExpense();
   		console.log($scope.graphData.labels)
   		console.log($scope.graphData.datasets[0].data)

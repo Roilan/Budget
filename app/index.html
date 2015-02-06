@@ -36,7 +36,7 @@
       <div ng-controller="MainCtrl">
         <div class="row expense-forms">
           
-          <form ng-submit="init()">
+          <form>
             <div class="form-group">
               <label for="month">Month:</label>
               <input type="text" ng-model="expense.month">
@@ -58,7 +58,8 @@
               <input type="number" id="hulu" ng-model="expense.hulu" />
             </div>
 
-            <input class="btn btn-primary" type="submit"/>
+            <input class="btn btn-primary" type="submit" ng-click="init()"/>
+            <button class="btn btn-primary" ng-click="clearInputs()">Clear</button>
           </form>
 
         </div>
