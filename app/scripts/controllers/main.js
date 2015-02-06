@@ -10,32 +10,27 @@
 angular.module('budgetApp')
   .controller('MainCtrl', function($scope) {
 
-  	$scope.expenseName = {
+  	$scope.expense = {
   		rent: '',
   		internet: '',
   		spotify: '',
   		hulu: ''
   	};
 
-  	$scope.addExpenseNames = function() {
+  	$scope.addExpense = function() {
 
-  		angular.forEach($scope.expenseName, function(value, key) {
+  		// Push getData key into .graphData.labels
+  		// Push getData values into .graphData.datasets[0].data
+  		angular.forEach($scope.expense, function(value, key) {
   			$scope.graphData.labels.push(key);
+  			$scope.graphData.datasets[0].data.push(value);
   		});
-
   	};
 
-  	$scope.addExpensesAmounts = function() {
-  		// Push getData key:values into $scope.graphData.datasets[0].data
-
-
-  	};
-
-  	$scope.displayExpenses = function() {
-  		$scope.addExpenseNames();
-  		//console.log($scope.graphData.labels)
-  		//console.log($scope.graphData.datasets[0].data)
-  		//console.log(Object.keys($scope.getData))
+  	$scope.init = function() {
+  		$scope.addExpense();
+  		console.log($scope.graphData.labels)
+  		console.log($scope.graphData.datasets[0].data)
   	};
 
   	$scope.graphData = {

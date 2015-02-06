@@ -36,26 +36,26 @@
       <div ng-controller="MainCtrl">
         <div class="row expense-forms">
           
-          <form ng-submit="displayExpenses()">
+          <form ng-submit="init()">
             <div class="form-group">
               <label for="month">Month:</label>
-              <input type="text" ng-model="getData.month">
+              <input type="text" ng-model="expense.month">
             </div>
 
             <div class="form-group">            
               <label for="rent">Rent:</label>
-              <input type="number" id="rent" ng-model="getData.rent" />
+              <input type="number" id="rent" ng-model="expense.rent" />
 
               <label for="internet">Internet:</label>
-              <input type="number" id="internet" ng-model="getData.internet" />
+              <input type="number" id="internet" ng-model="expense.internet" />
             </div>
 
             <div class="form-group">                 
               <label for="spotify">Spotify:</label>
-              <input type="number" id="spotify" ng-model="getData.spotify" />
+              <input type="number" id="spotify" ng-model="expense.spotify" />
 
               <label for="hulu">hulu:</label>
-              <input type="number" id="hulu" ng-model="getData.hulu" />
+              <input type="number" id="hulu" ng-model="expense.hulu" />
             </div>
 
             <input class="btn btn-primary" type="submit"/>
