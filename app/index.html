@@ -9,6 +9,7 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -39,7 +40,7 @@
           <form>
             <div class="form-group">
               <label for="month">Month:</label>
-              <input type="text" ng-model="expense.month">
+              <input type="text" ng-model="month">
             </div>
 
             <div class="form-group">            
@@ -63,14 +64,10 @@
           </form>
 
         </div>
-
-
-        <div class="display" ng-hide="true">
-          <p>{{getData.month}}</p>
-          <p>{{getData.rent}}</p>
-          <p>{{getData.internet}}</p>
-          <p>{{getData.spotify}}</p>
-          <p>{{getData.hulu}}</p>
+        
+        <div class="display">
+          <h3>{{month}}</h3>
+          <canvas id="bar" class="chart chart-bar" data="data" labels="labels"></canvas>
         </div>
       </div>
 
@@ -86,10 +83,10 @@
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/Chart.js/Chart.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/tc-angular-chartjs.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/Chart.js/Chart.min.js"></script>
+    <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

@@ -19,68 +19,46 @@ angular.module('budgetApp')
 
   	$scope.addExpense = function() {
 
-  		// Push getData key into .graphData.labels
-  		// Push getData values into .graphData.datasets[0].data
-  		angular.forEach($scope.expense, function(value, key) {
-  			$scope.graphData.labels.push(key);
-  			$scope.graphData.datasets[0].data.push(value);
-  		});
+  		// Push into array if .labels is less than .expense
+  		// Otherwise it will continue to push into the array
+
+  		// Push expense key / values arrays for chart
+
+  		var expenseObjLength = Object.keys($scope.expense).length;
+
+  		if ($scope.labels < expenseObjLength) {
+  			angular.forEach($scope.expense, function(value, key) {
+  				$scope.labels.push(key);
+  				$scope.data[0].push(value);
+  			});
+  		} else {
+  			$scope.clear();
+
+  			angular.forEach($scope.expense, function(value, key) {
+  				$scope.labels.push(key);
+  				$scope.data[0].push(value);
+  			});
+  		}
   	};
 
   	$scope.clear = function() {
-  		$scope.graphData.labels = [];
-  		$scope.graphData.datasets[0].data = [];
+  		$scope.labels = [];
+  		$scope.data[0] = [];
   	};
+
+  	// Expense names get pushed into labels array 
+  	$scope.labels = [];
+
+  	$scope.series = ['Series A', 'Series B'];
+
+  	// Expense amounts get pushed into data array
+  	// data array takes an array of values
+  	$scope.data = [
+    	[]
+  	];
 
   	$scope.init = function() {
-  		$scope.clear();
   		$scope.addExpense();
-  		console.log($scope.graphData.labels)
-  		console.log($scope.graphData.datasets[0].data)
   	};
-
-  	$scope.graphData = {
-  		// Expense names get pushed into labels array
-  		labels: [],
-
-  		datasets: [
-  			{
-  				label: 'My First dataset',
-	            fillColor: "rgba(151,187,205,0.5)",
-	            strokeColor: "rgba(151,187,205,0.8)",
-	            highlightFill: "rgba(151,187,205,0.75)",
-	            highlightStroke: "rgba(151,187,205,1)",
-	            data: [] // Expense amounts get pushed into data array
-  			}
-  		]
-  	};
-
-
-   //  $scope.myData = {
-  	// 	labels: ['Jan', 'Feb'],
-
-  	// 	datasets: [
-	  //       {
-	  //           label: 'My First dataset',
-	  //           fillColor: 'rgba(220,220,220,0.2)',
-	  //           strokeColor: 'rgba(220,220,220,1)',
-	  //           pointColor: 'rgba(220,220,220,1)',
-	  //           pointStrokeColor: '#fff',
-	  //           pointHighlightFill: '#fff',
-	  //           pointHighlightStroke: 'rgba(220,220,220,1)',
-	  //           data: [65, 59]
-	  //       },
-	  //       {
-	  //           label: 'My Second dataset',
-	  //           fillColor: 'rgba(151,187,205,0.2)',
-	  //           strokeColor: 'rgba(151,187,205,1)',
-	  //           pointColor: 'rgba(151,187,205,1)',
-	  //           pointStrokeColor: '#fff',
-	  //           pointHighlightFill: '#fff',
-	  //           pointHighlightStroke: 'rgba(151,187,205,1)',
-	  //           data: [28, 48]
-	  //       }
-  	// 	]
-  	// };
 
   });
