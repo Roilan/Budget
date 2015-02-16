@@ -9,4 +9,4 @@
  * Main module of the application.
  */
 angular
-  .module('budgetApp', ['chart.js']);
+  .module('budgetApp', ['chart.js', 'budgetApp.controllers', 'budgetApp.services']);
