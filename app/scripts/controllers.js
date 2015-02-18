@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name budgetApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the budgetApp
- */
-
 angular.module('budgetApp.controllers',[])
   .controller('BudgetController', function($scope, $timeout, chartService) {
 
