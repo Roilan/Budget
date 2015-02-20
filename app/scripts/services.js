@@ -12,17 +12,19 @@ angular.module('budgetApp.services', [])
 		this.addExpense = function(expense) {
 			var expenseObjLength = Object.keys(expense).length;
 
+			// loops over $scope.expense and pushes into labels/data
+			var pushExpense = function() {
+				angular.forEach(expense, function(value, key) {
+					self.labels.push(key);
+					self.data[0].push(value);
+				});
+			};
+
 			if (self.labels < expenseObjLength) {
-	  			angular.forEach(expense, function(value, key) {
-	  				self.labels.push(key);
-	  				self.data[0].push(value);
-	  			});
+	  			pushExpense();
   		 	} else {
   		 		self.clear();
-  		 		angular.forEach(expense, function(value, key) {
-	  				self.labels.push(key);
-	  				self.data[0].push(value);
-	  			});
+  		 		pushExpense();
   		 	}
 		};
 

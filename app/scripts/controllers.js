@@ -21,6 +21,8 @@ angular.module('budgetApp.controllers',[])
   	};
 
     $scope.updateData = function() {
+        // needed to wrap inside $scope.$apply  
+        // otherwise, doesn't update the scope without a second click
         $timeout(function() {
             $scope.labels = chartService.labels;
             $scope.data = chartService.data;

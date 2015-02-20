@@ -11,7 +11,7 @@
 angular.module('budgetApp', ['ui.router', 'chart.js', 'budgetApp.controllers', 'budgetApp.services'])
 	.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 		// sets unmatched url to root dir
-		//$urlRouterProvider.otherwise('');
+		$urlRouterProvider.otherwise('/');
 
 		// sets budgetState
 		$stateProvider
@@ -22,5 +22,5 @@ angular.module('budgetApp', ['ui.router', 'chart.js', 'budgetApp.controllers', '
 			});
 
 		// sets to html5mode
-		$locationProvider.html5Mode(true);
+		$locationProvider.html5Mode(false);
 	});
