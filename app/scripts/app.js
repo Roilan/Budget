@@ -10,15 +10,20 @@
  */
 angular.module('budgetApp', ['ui.router', 'chart.js', 'budgetApp.controllers', 'budgetApp.services'])
 	.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-		// sets unmatched url to root dir
+		// redirects to home state
 		$urlRouterProvider.otherwise('/');
-
+		$urlRouterProvider.when('/', '/home');
+		
 		// sets budgetState
 		$stateProvider
 			.state('budgetState', {
 				url: '/budget',
 				controller: 'BudgetController',
 				templateUrl: 'views/budget.html'
+			})
+			.state('homeState', {
+				url: '/home',
+				templateUrl: 'views/home.html'
 			});
 
 		// sets to html5mode
