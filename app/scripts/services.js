@@ -16,6 +16,11 @@ angular.module('budgetApp.services', [])
 			var pushExpense = function() {
 				angular.forEach(expense, function(value, key) {
 					self.labels.push(key);
+					
+					if (value === null) {
+						value = 0;
+					}
+					
 					self.data[0].push(value);
 				});
 			};
