@@ -7,7 +7,14 @@ angular.module('budgetApp.controllers',[])
   		rent: '',
   		internet: '',
   		spotify: '',
-  		hulu: ''
+  		hulu: '',
+      nyseg: '',
+      gym: '',
+      carwash: '',
+      debt: '',
+      food: '',
+      gas: '',
+      insurance: ''
   	};
 
   	$scope.addExpense = function() {
@@ -37,10 +44,11 @@ angular.module('budgetApp.controllers',[])
     };
 
     $scope.log = function() {
-        console.log('chartService.labels: ' + chartService.labels);
-        console.log('chartService.data: ' + chartService.data);
-        console.log('scope.labels: ' + $scope.labels);
-        console.log('scope.data: ' + $scope.data);
+        // console.log('chartService.labels: ' + chartService.labels);
+        // console.log('chartService.data: ' + chartService.data);
+        // console.log('scope.labels: ' + $scope.labels);
+        // console.log('scope.data: ' + $scope.data);
+        console.log($scope.expense);
     };
 
   });
