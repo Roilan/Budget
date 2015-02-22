@@ -15,9 +15,11 @@ angular.module('budgetApp.controllers',[])
   	};
 
   	$scope.clear = function() {
+
         chartService.clear();
+
         $scope.labels = chartService.labels;
-        $scope.data = chartService.data;
+        $scope.data = chartService.data;        
   	};
 
     $scope.updateData = function() {
