@@ -1,98 +1,16 @@
 <div class="expense-forms">
-  
   <form class="form-horizontal">
 
-    <div class="form-group">
-      <label for="rent" class="col-sm-2 control-label">Rent:</label>
+		<div class="form-group" ng-repeat="(key, value) in expense">
+			<label for="{{key}}" class="col-sm-2 control-label">{{key}}:</label>
 
-      <div class="col-sm-10">
-        <input type="number" class="form-control" id="rent" ng-model="expense.rent" />
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="internet" class="col-sm-2 control-label">Internet:</label>
-
-      <div class="col-sm-10">
-        <input type="number" class="form-control" id="internet" ng-model="expense.internet" />
-      </div>
-    </div>
+			<div class="col-sm-10">
+	    	<input type="number" class="form-control" id="{{key}}" ng-model="expense[key]" />
+			</div>
+		</div>
 
     <div class="form-group">
-      <label for="spotify" class="col-sm-2 control-label">Spotify:</label>
-
-      <div class="col-sm-10">
-        <input type="number" class="form-control" id="spotify" ng-model="expense.spotify" />
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="hulu" class="col-sm-2 control-label">Hulu:</label>
-
-      <div class="col-sm-10">
-        <input type="number" class="form-control" id="hulu" ng-model="expense.hulu" />
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="nyseg" class="col-sm-2 control-label">NYSEG:</label>
-
-      <div class="col-sm-10">
-        <input type="number" class="form-control" id="nyseg" ng-model="expense.nyseg" />
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="gym" class="col-sm-2 control-label">Gym:</label>
-
-      <div class="col-sm-10">
-        <input type="number" class="form-control" id="gym" ng-model="expense.gym" />
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="carwash" class="col-sm-2 control-label">Carwash:</label>
-
-      <div class="col-sm-10">
-        <input type="number" class="form-control" id="carwash" ng-model="expense.carwash" />
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="debt" class="col-sm-2 control-label">Debt:</label>
-
-      <div class="col-sm-10">
-        <input type="number" class="form-control" id="debt" ng-model="expense.debt" />
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="food" class="col-sm-2 control-label">Food:</label>
-
-      <div class="col-sm-10">
-        <input type="number" class="form-control" id="food" ng-model="expense.food" />
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="gas" class="col-sm-2 control-label">Gas:</label>
-
-      <div class="col-sm-10">
-        <input type="number" class="form-control" id="gas" ng-model="expense.gas" />
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="insurance" class="col-sm-2 control-label">Insurance:</label>
-
-      <div class="col-sm-10">
-        <input type="number" class="form-control" id="insurance" ng-model="expense.insurance" />
-      </div>
-    </div>
-
-
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
+    	<div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-primary" ng-click="init()">Budget</button>
         
         <button class="btn btn-primary" ng-click="clear();">Clear</button>
@@ -101,11 +19,10 @@
       </div>
     </div>
 
-  </form>
-
+	</form>
 </div>
 
 <div class="display">
-  <h3>{{month}}</h3>
-  <canvas id="bar" class="chart chart-bar" data="data" labels="labels"></canvas>
+	<h3>{{month}}</h3>
+	<canvas id="bar" class="chart chart-bar" data="data" labels="labels"></canvas>
 </div>
