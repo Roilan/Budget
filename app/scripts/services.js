@@ -5,10 +5,10 @@ angular.module('budgetApp.services', [])
 	.service('chartService', function() {
 
 		// Push into array if .labels is less than .expense
-  		// Otherwise it will continue to push into the array
+  	// Otherwise it will continue to push into the array
 
-  		// Push expense key / values arrays for chart
-  		var self = this;
+  	// Push expense key / values arrays for chart
+  	var self = this;
 		this.addExpense = function(expense) {
 			var expenseObjLength = Object.keys(expense).length;
 
@@ -44,9 +44,7 @@ angular.module('budgetApp.services', [])
 
 		// Expense amounts get pushed into data array
   		// data array takes an array of values
-		this.data = [
-			[]
-		];
+		this.data = [ [] ];
 	});
 
 
