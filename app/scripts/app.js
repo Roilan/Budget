@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-angular.module('budgetApp', ['ui.router', 'chart.js', 'budgetApp.controllers', 'budgetApp.services'])
+angular.module('budgetApp', ['ui.router', 'chart.js', 'budgetApp.controllers', 'budgetApp.services', 'budgetApp.filters'])
 	.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 		// redirects to home state
 		$urlRouterProvider.otherwise('/');

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('budgetApp.controllers',[])
+angular.module('budgetApp.controllers', [])
 	.controller('BudgetController', function($scope, $timeout, chartService) {
 
   	$scope.expense = {
