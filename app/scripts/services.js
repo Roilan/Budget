@@ -33,6 +33,17 @@ angular.module('budgetApp.services', [])
   		 	}
 		};
 
+		this.calcTotalExpenses = function() {
+			var totalExpense = 0;
+			var data = self.data[0];
+
+			for (var i = 0; i < data.length; i++) {
+				totalExpense += data[i];
+			}
+
+			return '$' + totalExpense;
+		};
+
 		this.clear = function() {
 			self.labels = [];
 			self.data = [ [] ];

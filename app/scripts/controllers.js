@@ -21,6 +21,8 @@ angular.module('budgetApp.controllers', [])
     	chartService.addExpense($scope.expense);
   	};
 
+    $scope.calcTotalExpenses = chartService.calcTotalExpenses;
+
   	$scope.clear = function() {
 			chartService.clear();
 
@@ -43,11 +45,12 @@ angular.module('budgetApp.controllers', [])
     };
 
     $scope.log = function() {
-	    console.log('chartService.labels: ' + chartService.labels);
+	    //console.log('chartService.labels: ' + chartService.labels);
 	   	console.log('chartService.data: ' + chartService.data);
-	   	console.log('scope.labels: ' + $scope.labels);
-	  	console.log('scope.data: ' + $scope.data);
-	    console.log($scope.expense);
+	   	//console.log('scope.labels: ' + $scope.labels);
+	  	console.log('scope.data: ' + $scope.data.length);
+	    //console.log($scope.expense);
+      console.log($scope.calcTotalExpenses());
     };
 
   });
