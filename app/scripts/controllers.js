@@ -17,11 +17,21 @@ angular.module('budgetApp.controllers', [])
       insurance: ''
   	};
 
+    $scope.income = {
+      income: ''
+    };
+
   	$scope.addExpense = function() {
     	chartService.addExpense($scope.expense);
   	};
 
+    $scope.addIncome = function() {
+      chartService.addIncome($scope.income);
+    };
+
     $scope.calcTotalExpenses = chartService.calcTotalExpenses;
+
+    $scope.calcTotalIncome = chartService.calcTotalIncome;
 
   	$scope.clear = function() {
 			chartService.clear();
@@ -42,6 +52,7 @@ angular.module('budgetApp.controllers', [])
   	$scope.init = function() {
 			$scope.updateData();
 			$scope.addExpense();
+      $scope.addIncome();
     };
 
     $scope.log = function() {
@@ -50,7 +61,8 @@ angular.module('budgetApp.controllers', [])
 	   	//console.log('scope.labels: ' + $scope.labels);
 	  	console.log('scope.data: ' + $scope.data.length);
 	    //console.log($scope.expense);
-      console.log($scope.calcTotalExpenses());
+      console.log($scope.income);
+      console.log(chartService.income)
     };
 
   });
