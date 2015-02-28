@@ -33,8 +33,9 @@
 </div>
 
 <div>
-	<p>Your total income is: {{calcTotalIncome()}}</p>
-	<p>Your total expense is: {{calcTotalExpenses()}}</p>
+	<p>Your total income is: ${{calcTotalIncome()}}</p>
+	<p>Your total expense is: ${{calcTotalExpenses()}}</p>
+	<p>Your remaining amount is: ${{calcTotalIncome() - calcTotalExpenses()}}</p>
 </div>
 
 <div class="display">

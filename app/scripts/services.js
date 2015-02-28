@@ -56,7 +56,7 @@ angular.module('budgetApp.services', [])
 				totalExpense += expenseData[i];
 			}
 
-			return '$' + totalExpense;
+			return totalExpense;
 		};
 
 	// end expense methods
@@ -95,7 +95,7 @@ angular.module('budgetApp.services', [])
 				totalIncome += incomeData[i];
 			}
 
-			return '$' + totalIncome;
+			return totalIncome;
 		};
 
 	// end income methods

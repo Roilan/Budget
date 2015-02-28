@@ -62,7 +62,7 @@ angular.module('budgetApp.controllers', [])
 	  	console.log('scope.data: ' + $scope.data.length);
 	    //console.log($scope.expense);
       console.log($scope.income);
-      console.log(chartService.income)
+      console.log(chartService.income);
     };
 
   });
