@@ -100,6 +100,16 @@ angular.module('budgetApp.services', [])
 
 	// end income methods
 
+	// start common methods
+
+		// subtracts totalIncome / totalExpense and returns it
+		// for net income / balance
+		this.calcNetIncome = function() {
+			return self.calcTotalIncome() - self.calcTotalExpenses();
+		};
+
+	// end common methods
+
 		this.clear = function() {
 			self.labels = [];
 			self.data = [ [] ];

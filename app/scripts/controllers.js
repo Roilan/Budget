@@ -33,6 +33,8 @@ angular.module('budgetApp.controllers', [])
 
     $scope.calcTotalIncome = chartService.calcTotalIncome;
 
+    $scope.calcNetIncome = chartService.calcNetIncome;
+
   	$scope.clear = function() {
 			chartService.clear();
 
